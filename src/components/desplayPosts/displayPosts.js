@@ -6,7 +6,6 @@ import CreatePosts from '../createPosts/createPosts'
 import { Container, Row, Col } from 'react-bootstrap';
 
 function DisplayPosts(props) {
-    debugger
     const [userPosts, setUserPosts] = useState([]);
     const [modalShow, setModalShow] = useState(false)
     let params = useParams()
@@ -17,7 +16,7 @@ function DisplayPosts(props) {
                 Authorization: ""
             }
         }).then(res => {
-            setUserPosts(res.data);
+            setUserPosts(res.data.filter((e) => e.userId == params.id));
             console.log(res.data)
         }).catch(err => {
             alert(err + " Please log in again")
@@ -33,7 +32,7 @@ function DisplayPosts(props) {
 
             <Container className="mt-5">
                 <Row>
-                    {userPosts.filter((e) => e.userId == params.id)
+                    {userPosts
                         .map((post, i) => (
                             <Col sm={3} className="mb-3" >
                                 <div class="card border-dark card-w" >

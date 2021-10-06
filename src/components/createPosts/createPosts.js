@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 
 function CreatePosts(props) {
-    debugger
     const { handleShow ,setUserPosts } = props;
     const [postTitle, setPostTitle] = useState(false);
     const [postBody, setPostBody] = useState(false);
@@ -14,7 +13,6 @@ function CreatePosts(props) {
 
 
     const createPost = () => {
-        debugger
         handleShow();
         let post = {
             "userId": params.id,
