@@ -1,0 +1,16 @@
+.table-w{
+    max-width: 50rem;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+}
+.input-margin{
+    margin-left: 10px;
+}
+
+.display-table{
+    display: block !important;
+}

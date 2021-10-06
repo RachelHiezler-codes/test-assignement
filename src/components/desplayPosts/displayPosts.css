@@ -1,0 +1,14 @@
+.card-w{
+    max-width: 18rem;
+    min-height: 100%;
+    
+}
+
+.card-place{
+    padding: 16px;
+    text-align: center;
+}
+
+.warp{
+    display:flex;
+}
