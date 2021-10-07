@@ -7,8 +7,8 @@ import { useParams } from "react-router-dom";
 
 function CreatePosts(props) {
     const { handleShow ,setUserPosts } = props;
-    const [postTitle, setPostTitle] = useState(false);
-    const [postBody, setPostBody] = useState(false);
+    const [postTitle, setPostTitle] = useState("");
+    const [postBody, setPostBody] = useState("");
     let params = useParams()
 
 
@@ -28,6 +28,8 @@ function CreatePosts(props) {
             console.log(res.data)
         })
         .catch(error => alert('failed to save data error description: ' + error))
+        setPostTitle("")
+        setPostBody("")
         }
 
     return (
@@ -56,7 +58,7 @@ function CreatePosts(props) {
                                 className="form-control"
                                 id="exampleFormControlTextarea1"
                                 rows="5"
-                                onChange={(e) => { setPostBody(e.target.value) }}
+                                onChange={(e) => {setPostBody(e.target.value) }}
                             />
                         </div>
                     </Modal.Body>
